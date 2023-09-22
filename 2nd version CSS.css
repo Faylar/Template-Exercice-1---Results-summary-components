@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    color: aqua;
+}
+.header{
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 20px;
+    z-index: 100;
+}
+.logo{
+    color: aliceblue;
+    font-weight: 600;
+    font-size: 26px;
+    text-decoration: none;
+}
+.navbar a{
+    margin-left: 20px;
+    color: aliceblue;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+}
+.home{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 0 10%;
+}
+.home-content{
+    max-width: 600px;
+}
+

@@ -1,0 +1,120 @@
+
+*{
+    margin: 0;/* Pas de marges*/
+    padding: 0; /*Pas de marges internes non-plus. Prendra toute la place*/
+    box-sizing: border-box;/*Signifie que la taille de la bordure reste la même tandis que 
+    la taille du contenu diminue à mesure que le remplissage et la bordure augmentent*/
+    font-family: sans-serif; /*Typographie*/
+}
+body{
+    background: #081b29;
+    color:#ededed;
+}
+.header{
+    position: fixed;
+    top: 0; /*signifie qu'on démarre à partir du haut*/
+    left: 0; /*signifie qu'on démarre à partir de la gauche (soit d'en haut à gauche)*/
+    width: 100%; /* Permet de prendre la totalité de l'espace dans la largeur.
+    Pour faire une longue bar de menu*/
+    padding: 20px 10%;/*Fixe la hauteur du menu. En l'occurance, 20pixels 
+    pour le haut et le bas et 10% pour la droite et la gauche*/
+    background: transparent;
+    display:flex; /*permet de créer deux boîtes différentes et de les mettre à la suite, à côté*/
+    justify-content: space-between; /*parvient à organiser le contenu (space-between : les mets à l'opposé)*/
+    align-items: center; /*Certainement pour s'assurer que les contenus sont bien centrés*/
+    z-index: 100; /* ???? */
+}
+.logo{
+    font-size: 25px; /*Taille de l'écrire*/
+    color: #ededed;
+    text-decoration: none; /* Enlève toutes les décorations par défaut (le trait sous le text)*/
+    font-weight: 600;/* Pour mettre en "gras". 600= Semi-gras. Unité de mesure va de 100 à 800.*/
+}
+.navbar a{
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px; /* Marge à gauche de chaque mot du menu. D'où l'importance de 
+    rajouter le "a" dans le choix des propriété de ".navbar a{}"*/
+    transition: .3s; /*Fait une animation au moment de passer la souris*/
+}
+.navbar a:hover, /*Est censé marcher quand on passe la souris deessus (:hover) mais aussi quand on clique dessus (.active)*/
+.navbar a.active{
+    color: #00abf0;
+}
+.home{
+    height: 100vh; /* Présice la hauteur de la boîte. 100vh Prendra l'entièreté de la page*/
+    display: flex; 
+    align-items: center; /*Ajuste toujours le contenu au centre quelque soit la hauteur*/
+    padding: 0 10%; /*Fice les marge gauche et droite à 10%. Pareil que pour le menu*/
+}
+.home-content{
+    background: transparent;
+    max-width: 600px;
+}
+.home-content h1{
+    font-size: 56px;
+    font-weight: 700;
+    margin: 12px 0;
+    line-height: 1.2;
+}
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    color: #00abf0
+}
+.home-content p{
+    font-size: 16px;
+    line-height: 24px; /* Fixe la taille de l'interligne*/
+    margin: 20px 0 40px;
+}
+.home-content .btn-box{
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+.btn-box a{
+    position:relative;
+    display: inline-flex; /*?????*/
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background-color: #00abf0;
+    border: 2px solid #00abf0; /*bordures du contenu*/
+    border-radius: 8px; /* Permet d'arrondir les angles des resctangles contenus*/
+    font-size: 19px;
+    color:#081b29;
+    text-decoration: none;
+    font-weight: 600; /*épaisseur de l'écriture*/
+    letter-spacing: 1px; /*évident*/
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+.btn-box a:nth-child(2){
+    background: transparent;
+    color: #00abf0;
+}
+.btn-box a:nth-child(2):hover{
+    color: #081b29;
+}
+btn-box a:nth-child(2)::before{
+    background: #00abf0;
+}
+.btn-box a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #081b29;
+    z-index: -1;
+    transition: .5s;
+}
+.btn-box a:hover::before{
+    width: 100%;
+}
